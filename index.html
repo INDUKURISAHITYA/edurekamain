@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+     <html>
+	     <head>
+		     <title>Edureka Website</title>
+			     <meta charset="utf-8">
+                 <meta name="viewport" content="width=device-width, initial-scale=1">
+                 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+                 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+                 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+	
+				 <style>
+				     #sa:hover
+					 {
+					     background-color:#F2F2F2;
+						 border-radius:30px;
+					
+					 }
+					#dropdown ul li.custom-button a{
+						color:#961D2C;
+					}
+					#dropdown ul li.custom-button a:active{
+						color:#fff;
+					}
+					#dropdown {
+					position: absolute;
+					top:0;
+					left: 0;
+					min-width: 200px;
+					padding: 5px 0;
+					margin: 10px;
+					background: #FFF;
+					border: 1px solid #ccc;
+					border: 1px solid rgba(0, 0, 0, 0.15);
+					-webkit-border-radius: 4px;
+					-moz-border-radius: 4px;
+					-ms-border-radius: 4px;
+					-o-border-radius: 4px;
+					border-radius: 4px;
+					-webkit-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.175);
+					-moz-box-shadow: 0 3px 10px rgba(0, 0, 0, 0.175);
+					box-shadow: 0 3px 10px rgba(0, 0, 0, 0.175);
+					z-index: 1000;
+				}
+
+				#dropdown.arrow-down {
+					-webkit-box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+					-moz-box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+					box-shadow: 0 -3px 10px rgba(0, 0, 0, 0.3);
+				}
+
+				#dropdown:before {
+					position: absolute;
+					bottom: -7px;
+					right: 9px;
+					display: inline-block;
+					border-right: 7px solid transparent;
+					border-bottom: 7px solid #ccc;
+					border-left: 7px solid transparent;
+					content: '';
+				}
+
+				#dropdown:after {
+					position: absolute;
+					top: -6px;
+					right: 10px;
+					display: inline-block;
+					border-right: 6px solid transparent;
+					border-bottom: 6px solid #FFF;
+					border-left: 6px solid transparent;
+					content: '';
+				}
+
+				#dropdown.arrow-left:before {
+					right: auto;
+					left: 9px;
+				}
+
+				#dropdown.arrow-left:after {
+					right: auto;
+					left: 10px;
+				}
+
+				#dropdown.arrow-down:before {
+					top: auto;
+					bottom: -7px;
+					border-bottom: none;
+					border-top: 7px solid #ccc;
+				}
+
+				#dropdown.arrow-down:after {
+					top: auto;
+					bottom: -6px;
+					border-bottom: none;
+					border-top: 6px solid #FFF;
+				}
+
+				#dropdown ul {
+					list-style: none;
+					margin: 0;
+					padding: 0;
+				}
+
+				#dropdown ul li {
+					position: relative;
+				}
+
+				#dropdown ul li a {
+					display: block;
+					padding: 3px 20px;
+					clear: both;
+					cursor: pointer;
+					color: #333;
+					font-family: sans-serif;
+					font-weight: normal;
+					font-size: 14px;
+					line-height: 1.42857143;
+					white-space: nowrap;
+					text-align: left;
+					text-decoration: none;
+				}
+
+				#dropdown ul li a:hover,
+				#dropdown ul li a:focus {
+					color: #262626;
+					background: #f5f5f5;
+					text-decoration: none;
+				}
+
+				#dropdown ul li a:active {
+					color: #fff;
+					background: #4183c4;
+				}
+
+				#dropdown ul li.divider {
+					height: 1px;
+					margin: 9px 0;
+					display: block;
+					overflow: hidden;
+					background-color: #e5e5e5;
+					cursor: default;
+				}
+				
+				.col-centered {
+						float: none;
+						margin: 0 auto;
+					}
+
+					.carousel-control { 
+						width: 8%;
+						width: 0px;
+					}
+					.carousel-control.left,
+					.carousel-control.right { 
+						margin-right: 40px;
+						margin-left: 32px; 
+						background-image: none;
+						opacity: 1;
+					}
+					.carousel-control > a > span {
+						color: white;
+						  font-size: 29px !important;
+					}
+
+					.carousel-col { 
+						position: relative; 
+						min-height: 1px; 
+						padding: 5px; 
+						float: left;
+					 }
+
+					 .active > div { display:none; }
+					 .active > div:first-child { display:block; }
+
+					/*xs*/
+					@media (max-width: 767px) {
+					  .carousel-inner .active.left { left: -50%; }
+					  .carousel-inner .active.right { left: 50%; }
+						.carousel-inner .next        { left:  50%; }
+						.carousel-inner .prev		     { left: -50%; }
+					  .carousel-col                { width: 50%; }
+						.active > div:first-child + div { display:block; }
+					}
+
+					/*sm*/
+					@media (min-width: 768px) and (max-width: 991px) {
+					  .carousel-inner .active.left { left: -50%; }
+					  .carousel-inner .active.right { left: 50%; }
+						.carousel-inner .next        { left:  50%; }
+						.carousel-inner .prev		     { left: -50%; }
+					  .carousel-col                { width: 50%; }
+						.active > div:first-child + div { display:block; }
+					}
+
+					/*md*/
+					@media (min-width: 992px) and (max-width: 1199px) {
+					  .carousel-inner .active.left { left: -33%; }
+					  .carousel-inner .active.right { left: 33%; }
+						.carousel-inner .next        { left:  33%; }
+						.carousel-inner .prev		     { left: -33%; }
+					  .carousel-col                { width: 33%; }
+						.active > div:first-child + div { display:block; }
+					  .active > div:first-child + div + div { display:block; }
+					}
+
+					/*lg*/
+					@media (min-width: 1200px) {
+					  .carousel-inner .active.left { left: -25%; }
+					  .carousel-inner .active.right{ left:  25%; }
+						.carousel-inner .next        { left:  25%; }
+						.carousel-inner .prev		     { left: -25%; }
+					  .carousel-col                { width: 25%; }
+						.active > div:first-child + div { display:block; }
+					  .active > div:first-child + div + div { display:block; }
+						.active > div:first-child + div + div + div { display:block; }
+					}
+
+					.block {
+						width: 306px;
+						height: 250px;
+						border:1px solid black;
+					}
+
+					
+					
+						</style>
+		 </head>
+		 <body>
+		         <nav class="navbar navbar-default navbar-fixed-top" style="background-color:#1A75C5;margin-bottom:0px">
+                     <div class="container-fluid">
+                         <div class="navbar-header">
+						     <button type="button" style="float:left" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                                 <span class="icon-bar"></span>
+                             </button>
+							 <span class="navbar-toggle" style="color:white" class="glyphicon glyphicon-earphone"></span>
+                             <a class="navbar-brand" href="#" style="color:white;font-size:25px;font-weight:bold">edureka!</a>
+                         </div>
+                        <form class="navbar-form navbar-left" action="">
+                            <div class="input-group">
+                                 <input type="text" class="form-control" size="60" placeholder="Enter course category or keyword">
+                             <div class="input-group-btn">
+                                 <button class="btn btn-warning active" type="submit" style="width:60px;">
+                                     <i class="glyphicon glyphicon-search"></i>
+                                 </button>
+                             </div>
+                            </div>
+							</form>
+					    <div class="collapse navbar-collapse" id="myNavbar">
+                        <ul class="nav navbar-nav navbar-right">
+                             <li><a href="#" style="color:white">Corporate Training</a></li>
+                             <li><a href="#"style="color:white">Courses</a></li>
+							 <li><a href="#" style="color:white">Blog</a></li>
+							 <li><a href="#" style="color:white">|</a></li>
+							 <li><a href="login.html" target="_blank"  style="color:white;font-weight:bold">Log In</a></li>
+							 <li><a href="signup.html" target="_blank"  style="color:white;font-weight:bold;">Sign Up</a></li>
+                        </ul>
+						</div>
+                    </div>
+                 </nav>
+				  
+				 <nav class="navbar navbar-default" style="margin-top:50px;margin-bottom:0px"  >
+				     <div class="container-fluid">
+					     <div class="navbar-header">
+						     <a class="navbar-brand" id="sa" style="font-size:13px;padding:8px 30px;" href="#">Browse<b style="color:black;"><br>Catergories<span class="caret"></span></b></a>
+							 <a class="navbar-brand" id="sa" style="font-size:14px;padding:14px 30px" href="#">PG Programs</a>
+							 <a class="navbar-brand" id="sa" style="font-size:14px;padding:14px 30px" href="#">Cloud Computing</a>
+						</div>
+						<div class="navbar-header navbar-right">
+							 <a class="navbar-brand" data-toggle="collapse" href="myNavbar1" ><span  class="glyphicon glyphicon-align-justify"></span></a>
+                         </div> 
+						 <div class="collapse navbar-collapse" id="myNavbar1">   
+                             <ul class="nav navbar-nav">
+							     <li><a href="#"  id="sa"  style="font-size:14px;padding:14px 30px">DevOps</a></li>
+		                         <li><a href="#"  id="sa"  style="font-size:14px;padding:14px 30px">Data Science</a></li>
+		                         <li><a href="#"  id="sa" style="font-size:14px;padding:14px 30px">Big Data</a></li>
+	                             <li><a href="#"  id="sa"style="font-size:14px;padding:14px 30px">BI and visualization</a></li>
+		                         <li><a href="#"  id="sa" style="font-size:14px;padding:14px 30px">Project Management and Methodologies</a></li>
+                             </ul>	
+                        </div>							 
+                     </div>
+                </nav>
+				
+		     <div id="myCarousel" class="carousel slide" data-ride="carousel" >
+  <!-- Indicators -->
+                     <ol class="carousel-indicators" style="height:65px">
+                         <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                         <li data-target="#myCarousel" data-slide-to="1"></li> 
+                         <li data-target="#myCarousel" data-slide-to="2"></li> 
+						 <li data-target="#myCarousel" data-slide-to="3"></li>
+						 <li data-target="#myCarousel" data-slide-to="4"></li>
+                     </ol>
+
+  <!-- Wrapper for slides -->
+                <div class="carousel-inner">
+                     <div class="item active">
+                          <img src="C:\Users\jagadeesh\Desktop\wireframe\Banner\img\1.jpg" style="height:400px" alt="Los Angeles">
+                     </div>
+
+                     <div class="item">
+                         <img src="C:\Users\jagadeesh\Desktop\wireframe\Banner\img\2.jpg" style="height:400px" alt="Chicago">
+                    </div>
+
+                    <div class="item">
+                         <img src="C:\Users\jagadeesh\Desktop\wireframe\Banner\img\3.jpg"  style="height:400px" alt="New York">
+                    </div>
+					
+					<div class="item">
+                         <img src="C:\Users\jagadeesh\Desktop\wireframe\Banner\img\4.jpg" style="height:400px" alt="New York">
+                    </div>
+					
+					<div class="item">
+                         <img src="C:\Users\jagadeesh\Desktop\wireframe\Banner\img\5.jpg" style="height:400px" alt="New York">
+                    </div>
+					
+                 </div>
+
+  <!-- Left and right controls -->
+                 <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+                     <span class="glyphicon glyphicon-chevron-left"></span>
+                     <span class="sr-only">Previous</span>
+                 </a>
+                 <a class="right carousel-control" href="#myCarousel" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right"></span>
+                    <span class="sr-only">Next</span> 
+                 </a>
+            </div>
+			
+			<div class="container">
+			     <div class="row"> 
+				     <div class="col-sm-4" style="position:relative;top:-40px;">
+					     <div class="thumbnail" style="width:350px;height:80px;">
+						     <ul type="none">
+							     <li style="font-size:18px;position:relative;top:10px">BECOME A</li>
+								 <li><a href="" style="text-decoration:none;position:relative;left:200px"><b>Know More<span class="glyphicon glyphicon-menu-right"></span></b></a></li>
+								 <li style="font-size:18px;position:relative;bottom:16px"><b>DEVOPS ENGINEER</b></li>
+							 </ul>
+						 </div>
+					 </div>
+					 <div class="col-sm-4" style="position:relative;top:-40px">
+					     <div class="thumbnail" style="width:350px;height:80px;">
+						     <ul type="none">
+							     <li style="font-size:18px;position:relative;top:10px">BECOME A</li>
+								 <li><a href="" style="text-decoration:none;position:relative;left:200px"><b>Know More<span class="glyphicon glyphicon-menu-right"></span></b></a></li>
+								 <li style="font-size:18px;position:relative;bottom:16px"><b>BIG DATA ARCHITECT</b></li>
+							 </ul>
+						 </div>
+					 </div>
+					 <div class="col-sm-4" style="position:relative;top:-40px">
+					     <div class="thumbnail" style="width:350px;height:80px;">
+						     <ul type="none">
+								 <li style="font-size:18px;position:relative;top:10px">BECOME A</li>
+								 <li><a href="" style="text-decoration:none;position:relative;left:200px"><b>Know More<span class="glyphicon glyphicon-menu-right"></span></b></a></li>
+								 <li style="font-size:18px;position:relative;bottom:16px"><b>DATA SCIENTIST</b></li>
+							 </ul>
+						 </div>
+					 </div>
+				 </div> 
+						
+				 <div class="row" style="position:relative;margin-top:-80px">
+                     <h3><b>Trending Courses</b></h3>
+                 </div>					 
+				 
+				 <div class="row" style="margin-top:20px">
+					<ul class="list-inline">
+						 <li><a href="#" style="font-size:20px;padding:0px 30px;color:gray;text-decoration:underline"><b>All</b></a></li>
+						 <li><a href="#" style="font-size:20px;padding:0px 30px;color:gray;">Cloud Computing</a></li>
+						 <li><a href="#" style="font-size:20px;padding:0px 30px;color:gray;">DevOps</a></li>
+						 <li><a href="#" style="font-size:20px;padding:0px 30px;color:gray;">BI and Visualization</a></li>
+						 <li><a href="#" style="font-size:20px;padding:0px 30px;color:gray;">Big Data</a></li>
+						 <li><a href="#" rel="I am parent 1!" style="padding-left:230px;color:gray;" class="dropdown"><span class="glyphicon glyphicon-align-justify" ></span></a></li>     
+						 </li>
+					</ul>
+			     </div>				
+								 
+			
+			
+			
+					<div class="row">
+						<div class="col-xs-12 col-md-12 col-centered">
+
+							<div id="carousel" class="carousel slide" data-ride="carousel" data-type="multi" data-interval="2500">
+								<div class="carousel-inner">
+									<div class="item active">
+										<div class="carousel-col">
+											<div class="block img-responsive">
+											    <img src="C:\Users\jagadeesh\Desktop\wireframe\edureka\images\1.jpg" style="width:275px;
+						height: 249px;">
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-col">
+											<div class="block  img-responsive">
+											     <img src="C:\Users\jagadeesh\Desktop\wireframe\edureka\images\2.jpg" style="width:275px;
+						height: 249px;">
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-col">
+											<div class="block img-responsive">
+											     <img src="C:\Users\jagadeesh\Desktop\wireframe\edureka\images\3.jpg" style="width:275px;
+						height: 249px;"> 
+											</div>
+										</div>
+									</div>
+									<div class="item">
+										<div class="carousel-col">
+											<div class="block img-responsive">
+											     <img src="C:\Users\jagadeesh\Desktop\wireframe\edureka\images\4.jpg" style="width:275px;
+						height: 249px;">
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<!-- Controls -->
+								<div class="left carousel-control">
+									<a href="#carousel" role="button" data-slide="prev">
+										<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+										<span class="sr-only">Previous</span>
+									</a>
+								</div>
+								<div class="right carousel-control">
+									<a href="#carousel" role="button" data-slide="next">
+										<span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+										<span class="sr-only">Next</span>
+									</a>
+								</div>
+							</div>
+						</div>
+					  </div>
+			</div>
+               
+			     <script>
+					
+						   $(document).ready(function(e) {
+							   
+							   $(".dropdown").dropdown({
+								   
+								   template : function(r){ return "<li><a>"+r.text+"</a></li>"; },
+								   buttons:[
+									   //Button 1
+									   {
+										   text: 'Delete', //Inner HTML
+										   href: '', //<a> href
+										   addClass: 'custom-button', //<li> Class 
+										   onClick: function(p,e){
+											   alert('Look in console!'); 
+											   console.log(p); //Parent (a.dropdown)
+											   console.log(e); //Clicked button 
+											   return true; //Return true - will close dropdown, false - will keep dropwdown 
+										   }
+									   },
+									   
+									   // Separator
+									 
+									   
+									   //Button 2
+									   {
+										   text: 'Options',
+										   href: '',
+										   addClass: '',
+										   onClick: function(p, e){ alert('Function return false!'); return false; } 
+									   },
+									   
+									   //Button 3
+									   {
+										   text: 'Properties',
+										   href: '',
+										   addClass: '',
+										   onClick: function(p,e){ alert(p.attr('rel')); return true; } 
+									   }
+									  
+								   ]
+								   
+							   });
+								
+						   });
+						   
+						   (function(e){e.fn.dropdown=function(n){var r=e.extend({},e.fn.dropdown.defaults,n);return this.each(function(n,i){var s,o=e(i),u,a="#dropdown",f={init:function(){s=this;u=e("<div id='dropdown' />").hide();u.on("click","ul li a",function(t){s._dropButton(e(this))}).on("click",function(e){e.stopPropagation()});s._hideDrop();s._showDrop();s._dropContent();s._dropPosition()},_showDrop:function(){e("body").append(u)},_hideDrop:function(){e(a).remove()},_dropContent:function(){if(r.buttons.length==0&&!e.isArray(r.buttons)){s._hideDrop();return false}var n="<ul>";e.each(r.buttons,function(i,s){if(e.isEmptyObject(this)){n+='<li class="divider"></li>'}else{t=typeof r.template=="function"?r.template({id:i,text:s["text"],href:s["href"],addClass:s["addClass"]}):r.template;if(s["text"]){t=t.replace(new RegExp("%text%","g"),s["text"])}if(s["addClass"]){t=$(t).attr("class",s["addClass"]).get(0).outerHTML}if(s["href"]){t=$(t).find("a").attr("href",s["href"]).closest("li").get(0).outerHTML}n+=t}});n+="</ul>";u.append(n)},_dropPosition:function(){var t={wH:e(window).height()+e(window).scrollTop(),wW:e(window).width()+e(window).scrollLeft()},n={dH:u.outerHeight(),dW:u.outerWidth()},r={bTop:o.offset().top,bLeft:o.offset().left,bH:o.outerHeight(),bW:o.outerWidth()},i=r.bTop+r.bH+2,s=r.bLeft-(n.dW-r.bW);u.css({top:i+"px",left:s+"px"});if(s<0){u.css("left",r.bLeft).addClass("arrow-left")}if(i+n.dH>t.wH){i=r.bTop-n.dH-r.bH-2;u.css("top",i+"px").addClass("arrow-down")}if(s+n.dW==t.wW){s=s-8;u.css("left",s)}u.show()},_dropButton:function(t){var n=false,i=u.find("ul li a").index(t),a=e.grep(r.buttons,function(t){return!e.isEmptyObject(t)})[i];if(a.onClick&&typeof a.onClick=="function"){if(a.onClick(o,t)){s._hideDrop()}}else{s._hideDrop()}},_disable:function(){f.disabled=true},_enable:function(){f.disabled=false},disabled:false};o.on("click",function(e){if($(a).length>0){f._hideDrop()}else{if(!f.disabled){f.init()}}e.preventDefault()});o.on("dropdown.disable",f._disable);o.on("dropdown.enable",f._enable);e(this).click(function(e){e.stopPropagation()});e("html").click(function(){f._hideDrop()});e(window).bind("contextmenu",function(){f._hideDrop()}).bind("blur",function(){f._hideDrop()}).bind("resize",function(){f._hideDrop()}).bind("scroll",function(){f._hideDrop()});return o})};e.fn.dropdown.defaults={template:function(e){return"<li><a>"+e.text+"</a></li>"},buttons:[{text:"Button",href:"",addClass:"",onClick:function(e,t){console.log(e);console.log(t);return true}},{}]}})(jQuery)
+						   
+						   $('.carousel[data-type="multi"] .item').each(function() {
+								var next = $(this).next();
+								if (!next.length) {
+									next = $(this).siblings(':first');
+								}
+								next.children(':first-child').clone().appendTo($(this));
+
+								for (var i = 0; i < 3; i++) {
+									next = next.next();
+									if (!next.length) {
+										next = $(this).siblings(':first');
+									}
+
+									next.children(':first-child').clone().appendTo($(this));
+								}
+						    });
+						</script>
+						
+						
+
+		 </body>
+	 </html>
